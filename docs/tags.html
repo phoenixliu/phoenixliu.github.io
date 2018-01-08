@@ -1,0 +1,23 @@
+---
+layout: default
+title: Tags
+permalink: /archives/tags/
+---
+
+<article>
+  <h1 class="post-list-heading">Tags</h1>
+  {% if site.tags.size > 0 %}
+  {% for posts in site.tags %}
+  <section>
+    <h2 id="{{posts[0]}}">{{ posts[0] }}</h2>
+    <ul>
+      {% for post in posts[1] %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
+  {% endif %}
+</article>

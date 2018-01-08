@@ -1,0 +1,29 @@
+---
+layout: default
+title: Archives
+permalink: /archives/
+---
+
+<article>
+  <header><h1>Post Archives</h1></header>
+  <section>
+    <p>A complete list of all my posts.</p>
+    <ul>
+      <li>Archived in <a href="{{ site.url }}/archives/categories/">categories</a></li>
+      <li>Archived via <a href="{{ site.url }}/archives/tags/">tags</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>List</h2>
+    {% assign max = site.posts.size | minus: 1 %}
+    <nav class="recent-posts">
+      <ul>
+        {% for i in (0..max) %}
+        {% assign post = site.posts[i] %}
+        <li><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </section>
+</article>

@@ -1,0 +1,16 @@
+<header class="post-header">
+  <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+  <div class="post-meta">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {{ page.date | date_to_string }}
+    </time>
+    {% if page.categories %}
+    <span><a href="{{ site.url }}/archives/categories/{{ page.categories }}/">{{ page.categories }}</a></span>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+    {% for tag in page.tags %}
+    <span><a href="{{ site.url }}/archives/tags/{{ tag }}/">{{ tag }}</a></span>
+    {% endfor %}
+    {% endif %}
+  </div>
+</header>

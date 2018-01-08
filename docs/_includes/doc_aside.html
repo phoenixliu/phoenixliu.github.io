@@ -1,0 +1,10 @@
+<aside class="toc">
+  {% if page.toc %}
+  <h2>Contents</h2>
+  <ul>
+    {% for content in page.toc %}
+    <li><a href="{{ page.url }}#{{ content.id }}">{{ content.name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</aside>

@@ -1,0 +1,310 @@
+
+@import "normalize";
+@import "pygments";
+@import "variables";
+@import "mixins";
+@import "gridism";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-text;
+  line-height: 1.5;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+a {
+  color: $extra-text-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.wrapper {
+  @include large {
+    max-width: $large-breakpoint;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+  }
+
+  @include medium {
+    padding: 2rem 4rem;
+    font-size: 1.125rem;
+  }
+
+  @include small {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.main {
+  word-wrap: break-word;
+  min-height: 400px;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  @include large {
+  }
+
+  @include medium {
+  }
+
+  @include small {
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  header .post-meta {
+    font-size: $font-size-small;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prev-next {
+    margin-top: 2rem;
+  }
+
+  .prev-next ul {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      a {
+        text-transform: uppercase;
+      }
+
+      a.prev {
+        padding-right: 1rem;
+      }
+
+      a.next {
+        padding-left: 1.4rem;
+        border-left: .15rem solid $border-color;
+      }
+    }
+  }
+
+  .post-aside ul {
+    padding-left: 1rem;
+
+    li {
+      font-size: .875rem;
+    }
+  }
+
+  span.date {
+    margin-right: .5em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: $font-weight-regular;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  blockquote {
+    font-style: italic;
+    padding: 1rem;
+    margin-left: 0;
+    border-left: .3rem solid $border-color;
+    color: $extra-text-color;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  code {
+    font-size: .9rem;
+    font-family: $font-family-code;
+    color: $code-text-color;
+    background: $code-background-color;
+    padding: 2px 4px;
+    border-radius: .3rem;
+  }
+
+  pre {
+    background: $code-background-color;
+    border: solid 1px $border-color;
+    border-radius: .3rem;
+    padding: .8em;
+    line-height: 1.45;
+    word-wrap: normal;
+    overflow: auto;
+
+    > code {
+      background: transparent;
+      border: 0;
+      word-break: normal;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 0;
+  }
+
+  table {
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all; // For Firefox to horizontally scroll wider tables.
+    -webkit-overflow-scrolling: touch;
+
+    th {
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      padding: .5rem 1rem;
+      border: 1px solid $table-border-color;
+    }
+  }
+
+  dl {
+    padding: 0;
+
+    dt {
+      padding: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    dd {
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  hr {
+    height: 2px;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: $hr-border-color;
+    border: 0;
+  }
+}
+
+.site-header {
+  color: $color-sand;
+  background-color: $color-ocean;
+
+  @include large {
+    .icon {
+      font-size: $font-size-xx-large;
+    }
+  }
+
+  @include medium {
+    .icon {
+      font-size: $font-size-x-large;
+    }
+  }
+
+  @include small {
+    .icon {
+      font-size: $font-size-large;
+    }
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+    font-weight: $font-weight-bold;
+  }
+
+  nav ul {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      a {
+        color: $background-color;
+        padding: 1rem .5rem 1rem 0;
+
+        &:hover {
+          color: $color-rock;
+          // text-decoration: none;
+        }
+      }
+    }
+
+    li.current {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.site-footer {
+  background-color: $color-sand;
+
+  .wrapper {
+    font-size: $font-size-small;
+  }
+
+  #address {
+    margin-bottom: .5rem;
+
+    span, a {
+      padding-right: .5rem;
+    }
+
+    a {
+      padding-left: .5rem;
+      border-left: 1px solid $border-color;
+    }
+  }
+}
+
+.new-post::before {
+  content: "Latest";
+  text-transform: uppercase;
+  margin-right: 1rem;
+  padding: 0 .3rem;
+  border: 1px solid $border-color;
+  border-radius: .3rem;
+}
+
+.article-hr {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: .15rem solid $border-color;
+}
+
+ // Doc grid
+.unit:first-child,
+.unit:last-child {
+  padding: 0;
+}

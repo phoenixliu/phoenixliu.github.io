@@ -1,0 +1,10 @@
+- title: Getting Started
+  items:
+    - title: Installing MySQL
+      link: installing-mysql
+    - title: Bash Scripts
+      link: bash-scripts
+- title: In Depth
+  items:
+    - title: Core Scala
+      link: core-scala

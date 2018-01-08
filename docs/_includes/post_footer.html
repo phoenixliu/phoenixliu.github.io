@@ -1,0 +1,19 @@
+<footer class="post-footer">
+  <section class="article-hr"></section>
+  <nav class="prev-next">
+    <ul>
+      <li><a href="{% if page.next.url %}{{ page.next.url }}{% endif %}" class="prev">Newer</a></li>
+      <li><a href="{% if page.previous.url %}{{ page.previous.url }}{% endif %}" class="next">Older</a></li>
+    </ul>
+  </nav>
+  <nav class="related-posts">
+    {% if site.related_posts.size > 0 %}
+    <h4>Related Posts</h4>
+    <ul>
+      {% for post in site.related_posts %}
+      <li><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </nav>
+</footer>

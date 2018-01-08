@@ -1,0 +1,37 @@
+// Breakpoints
+$large-breakpoint: 64rem !default;
+$medium-breakpoint: 42rem !default;
+
+// Typography
+$font-size-small: 0.75rem;
+$font-size-regular: 16px;
+$font-size-large: 1.5rem;
+$font-size-x-large: 2rem;
+$font-size-xx-large: 3rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+$font-family-text: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-code: Consolas, monospace;
+
+// Color theme from https://color.adobe.com/sandy-stone-beach-ocean-diver-color-theme-15325/
+$color-sand: #e6e2af;
+$color-rock: #a7a37e;
+$color-foam: #efecca;
+$color-sky: #046380;
+$color-ocean: #002f2f;
+
+$text-color: $color-ocean !default;
+$extra-text-color: $color-sky !default;
+$background-color: $color-foam !default;
+
+// Code
+$code-text-color: $color-foam !default;
+$code-background-color: $color-ocean !default;
+
+// Border
+$border-color: $color-rock !default;
+$table-border-color: $color-rock !default;
+$hr-border-color: $color-rock !default;

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Docs
+permalink: /docs/
+---
+
+<article>
+  <header><h1>Documentation</h1></header>
+  {% assign lists = site.data.docs %}
+  {% for list in lists %}
+  <section>
+    <header><h2>{{ list.title }}</h2></header>
+    <ul>
+      {% for item in list.items %}
+      <li><a href="{{ site.url }}/docs/{{ item.link }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</article>

@@ -1,0 +1,55 @@
+---
+layout: default
+title: Home
+overview: true
+---
+
+<article>
+  <header>
+    <h1>Posts and Docs</h1>
+  </header>
+  <section>
+    {% assign post = site.posts[0] %}
+    <h2 class="new-post"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <section>
+      <p>{{ post.brief }}</p>
+    </section>
+    <section class="article-hr">
+      <a href="{{ post.url}}">Full article</a>
+    </section>
+  </section>
+  <section>
+    <h2>Recently Posts</h2>
+    {% assign max = site.posts.size | minus: 1 %}
+    {% if max > 10 %}
+    {% assign max = 10 %}
+    {% endif %}
+    <nav class="recent-posts">
+      <ul>
+        {% for i in (0..max) %}
+        {% assign post = site.posts[i] %}
+        <li><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+        <li><a href="{{ site.url }}/archives/">More</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <h2>Documentations</h2>
+    {% assign max = site.docs.size | minus: 1 %}
+    {% if max > 10 %}
+    {% assign max = 10 %}
+    {% endif %}
+    <nav class="recent-docs">
+      <ul>
+        {% for i in (0..max) %}
+        {% assign doc = site.docs[i] %}
+        <li><span class="date">{{ doc.date | date: "%Y-%m-%d" }}</span><a href="{{ doc.url }}">{{ doc.title }}</a>
+        </li>
+        {% endfor %}
+        <li><a href="{{ site.url }}/docs">More</a></li>
+      </ul>
+    </nav>
+  </section>
+</article>

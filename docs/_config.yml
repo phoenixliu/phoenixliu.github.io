@@ -1,0 +1,45 @@
+title: "Phoenix Liu"
+email: "phoenixliu@outlook.com"
+baseurl: ""
+url: "http://phoenixliu.github.io"
+github: "phoenixliu"
+repository: "phoenixliu.github.io"
+
+sass:
+  style: "compressed"
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      brief: "..."
+  -
+    scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: "doc"
+
+collections:
+  posts:
+    permalink: "/posts/:year/:month/:day/:title/"
+    output: true
+  docs:
+    permalink: "/docs/:title/"
+    output: true
+
+markdown: kramdown
+
+paginate: 5
+paginate_path: "/posts/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
